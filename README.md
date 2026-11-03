@@ -41,6 +41,10 @@ To change something later: open the file on GitHub, click the pencil icon, edit,
 - `CONTACT_EMAIL` – shows on the Contact page (blank = hidden).
 - `FORM_ENDPOINT` – free form at https://formspree.io: sign up > **New form** > copy the URL like `https://formspree.io/f/abcdwxyz` and paste it here. Messages go to your email.
 - `SOCIALS` – paste full links (e.g. `https://instagram.com/yourname`). Blank ones are hidden.
+- `BAGS` – the bags shown on **bags.html** (the Bags tab). Each bag is one line:
+  `{ name: "Black Signature-Style Shoulder Bag", type: "Shoulder Bag", price: 180, image: "bag-5.jpg", link: "/collections/all" }`.
+  To add a bag: upload its photo to the repo, copy a line, change the details. For `link`, paste the product's
+  Shopify link (e.g. `https://11u81s-f0.myshopify.com/products/your-handle`) or just `/products/your-handle`.
 
 > Note: your Shopify store is currently password-protected ("Opening soon"). Visitors will see the password page
 > until you open it: Shopify admin > **Online Store > Preferences > Password protection** > turn off (needs a paid plan).

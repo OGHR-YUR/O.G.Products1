@@ -115,3 +115,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;
 .buy-button-section{border:1px dashed var(--line);border-radius:var(--r);padding:1.5rem}
 @media(max-width:639px){.grid-4{grid-template-columns:repeat(2,1fr);gap:.8rem}.grid-4 .card-body{padding:.9rem}.grid-4 .card-body p{display:none}.grid-4 .ph svg{width:44px;height:44px}}
 .grid-2 .ph{aspect-ratio:16/10}
+/* bags */
+.bag-img{aspect-ratio:600/380;background:#16161a;overflow:hidden}
+.bag-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+a.bag-card:hover .bag-img img{transform:scale(1.04)}
+.bag-type{display:block;font-size:.7rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.bag-card h3{font-size:1.02rem}
+.bag-row{display:flex;justify-content:space-between;align-items:center;gap:.6rem;margin-top:auto}
+.bag-card .card-body{display:flex;flex-direction:column;flex:1}
+.price{font-family:var(--display);font-size:1.35rem;color:var(--accent)}
+.ph.photo{background:#16161a}.ph.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bags-note{color:var(--muted);font-size:.9rem;margin-top:1.6rem}
+@media(max-width:639px){.bag-card .card-body{padding:.9rem}.bag-card h3{font-size:.9rem}.price{font-size:1.1rem}}

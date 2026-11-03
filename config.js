@@ -42,6 +42,29 @@ window.OG_CONFIG = {
   // e.g. "https://formspree.io/f/abcdwxyz"
   FORM_ENDPOINT: "https://formspree.io/f/REPLACE-WITH-YOUR-FORM-ID",
 
+  // ------------------------------------------------------------
+  // BAGS – shown on bags.html. To add a bag, copy one { ... } line,
+  // change the details, and save. Fields:
+  //   name  – colorway shown on the card
+  //   type  – bag type / model name
+  //   price – number, in US dollars
+  //   image – photo file in the site folder (e.g. "bag-9.jpg")
+  //   link  – Shopify link for this product. Either a full URL
+  //           ("https://11u81s-f0.myshopify.com/products/your-handle")
+  //           or a path ("/products/your-handle"). Default: all products.
+  // ------------------------------------------------------------
+  BAGS_SECTION_TITLE: "Designer Style Bags",
+  BAGS: [
+    { name: "Pink Signature-Style Shoulder Bag", type: "Shoulder Bag", price: 180, image: "bag-1.jpg", link: "/collections/all" },
+    { name: "Light Pink Signature-Style Shoulder Bag", type: "Shoulder Bag", price: 180, image: "bag-2.jpg", link: "/collections/all" },
+    { name: "Cherry Print Shoulder Bag – Tan", type: "Shoulder Bag", price: 180, image: "bag-3.jpg", link: "/collections/all" },
+    { name: "Cherry Print Shoulder Bag – Navy", type: "Shoulder Bag", price: 180, image: "bag-4.jpg", link: "/collections/all" },
+    { name: "Black Signature-Style Shoulder Bag", type: "Shoulder Bag", price: 180, image: "bag-5.jpg", link: "/collections/all" },
+    { name: "Brown Signature-Style Shoulder Bag – Black Trim", type: "Shoulder Bag", price: 180, image: "bag-6.jpg", link: "/collections/all" },
+    { name: "Brown Signature-Style Shoulder Bag – Saddle Trim", type: "Shoulder Bag", price: 180, image: "bag-7.jpg", link: "/collections/all" },
+    { name: "Cream Signature-Style Shoulder Bag – Taupe Trim", type: "Shoulder Bag", price: 180, image: "bag-8.jpg", link: "/collections/all" }
+  ],
+
   // Social links. Leave "" to hide an icon.
   SOCIALS: {
     instagram: "",

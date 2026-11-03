@@ -92,4 +92,28 @@
         .finally(function () { submit.disabled = false; });
     });
   }
+
+  // 8) Bags page: build cards from OG_CONFIG.BAGS
+  var bagGrid = document.getElementById("bags-grid");
+  if (bagGrid) {
+    var bags = C.BAGS || [];
+    var esc = function (t) { return String(t == null ? "" : t).replace(/[&<>"']/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]; }); };
+    var linkFor = function (l) {
+      if (!l) return shopUrl("ALL");
+      if (/^https?:\/\//i.test(l)) return l;
+      return base ? base + (l.charAt(0) === "/" ? l : "/" + l) : "#";
+    };
+    var money = function (p) { var n = Number(p); return isNaN(n) ? esc(p) : "$" + (n % 1 ? n.toFixed(2) : n); };
+    bagGrid.innerHTML = bags.map(function (b) {
+      var label = esc(b.name) + (b.type ? " – " + esc(b.type) : "");
+      return '<a class="card bag-card" href="' + esc(linkFor(b.link)) + '" target="_blank" rel="noopener">' +
+        (b.image ? '<div class="bag-img"><img src="' + esc(b.image) + '" alt="' + label + '" loading="lazy" width="600" height="380"></div>'
+                 : '<div class="ph"><span class="ph-label">Photo coming soon</span></div>') +
+        '<div class="card-body"><span class="bag-type">' + esc(b.type) + '</span><h3>' + esc(b.name) + '</h3>' +
+        '<div class="bag-row"><span class="price">' + money(b.price) + '</span><span class="card-link">Buy &rarr;</span></div></div></a>';
+    }).join("");
+    var cnt = document.getElementById("bags-count");
+    if (cnt) cnt.textContent = bags.length + (bags.length === 1 ? " bag" : " bags");
+    if (C.BAGS_SECTION_TITLE) document.querySelectorAll("[data-bags-title]").forEach(function (el) { el.textContent = C.BAGS_SECTION_TITLE; });
+  }
 })();
